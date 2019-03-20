@@ -8,23 +8,15 @@ const rl = readline.createInterface({
 const client = mqtt.connect('mqtt://localhost:1883');
 
 client.on('connect', () => {
-  client.subscribe('presence', (err) => {
-    if (!err) {
-      client.publish('presence', 'hello mqtt');
-    }
+  client.subscribe('lifx', (err) => {
+    if (err) {
+      console.log(err);
+    } else if (!err) {
+      client.publish('lifx', 'hello mqtt');
+    } else console.log(err);
   });
 });
 
 client.on('message', (topic, message) => {
   console.log(topic, message.toString());
-});
-
-readline.emitKeypressEvents(process.stdin);
-process.stdin.setRawMode(true);
-process.stdin.on('keypress', (str, key) => {
-  if (key.ctrl && key.name === 'c') {
-    process.exit();
-  } else {
-    client.publish('presence', key.name);
-  }
 });

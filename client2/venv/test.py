@@ -11,5 +11,8 @@ client = mqtt.Client("thing1")
 client.on_message=on_message
 print("connecting to broker")
 client.connect(broker) 
-client.subscribe("presence")
+client.subscribe("lifx")
+while(True):
+    mess = input("Message: ")
+    client.publish("lifx", mess)
 client.loop_forever() 
