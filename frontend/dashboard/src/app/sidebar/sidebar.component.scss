@@ -1,0 +1,19 @@
+#sidebar-container{
+    height: 100vh;
+    width: 3.5rem;
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    position: fixed;
+    top:0;
+    left:0;
+} 
+.side-icons{
+    padding-top: 10px;
+    display:block;
+}
+.icon{
+    box-sizing: content-box;
+    position: relative;
+    padding-bottom: 20px;
+    width:100%;
+}

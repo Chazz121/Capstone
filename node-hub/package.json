@@ -12,6 +12,7 @@
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
     "mqtt": "^2.18.8",
+    "node-lifx": "^0.8.0",
     "ws": "^6.1.4"
   },
   "devDependencies": {
